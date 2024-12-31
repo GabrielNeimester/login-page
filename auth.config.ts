@@ -1,5 +1,5 @@
 import type { NextAuthConfig } from 'next-auth';
- 
+
 export const authConfig = {
   pages: {
     signIn: '/login',
@@ -7,10 +7,13 @@ export const authConfig = {
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
-      const isOnDashboard = nextUrl.pathname.startsWith('/shop');
-      if (isOnDashboard) {
+      const isOnShop = nextUrl.pathname.startsWith('/shop');
+      if (isOnShop) {
         if (isLoggedIn) return true;
         return false;
+      }
+      else if (isLoggedIn) {
+        return Response.redirect(new URL('/shop', nextUrl));
       }
       return true;
     },
