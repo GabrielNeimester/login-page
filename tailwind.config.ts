@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
 import {nextui} from "@nextui-org/react";
 
+
+
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,5 +19,25 @@ export default {
     },
   },
   darkMode: "class",
-  plugins: [nextui()]
+  plugins: [nextui({
+    themes: {
+      light: {
+        colors: {
+          primary: {
+            DEFAULT: "#7A5656",
+            foreground: "#F9F9F9",
+          },
+        },
+      },
+      dark: {
+        colors: {
+          primary: {
+            DEFAULT: "#7A5656",
+            foreground: "#060606",
+          },
+          background: "#060606"
+        },
+      },
+    },
+  }),]
 } satisfies Config;
