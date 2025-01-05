@@ -1,64 +1,57 @@
+'use client'
+import Image from 'next/image'
+import CardCatalog from './ui/card-catalog'
+import ContactForm from './ui/contact-form'
+import { FaLocationDot, FaPhone, FaEnvelope } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <div className="bg-cover bg-center flex flex-col sm:flex-row items-center m-4">
+        <div className='flex flex-col space-y-8'>
+          <h1 className='text-2xl text-primary font-bold '>A MELHOR COMBINAÇÃO PARA VOCÊ!</h1>
+          <p className='font-medium'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus distinctio similique adipisci saepe repudiandae quaerat! Ullam, quo. Quae quaerat libero, illum est repellat, consequatur earum molestias, totam at velit labore.</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Image
+          alt="Candle Image"
+          src="/candle-home.svg"
+          width={500}
+          height={450}
         >
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </Image>
+      </div>
+      <CardCatalog />
+      <div className="bg-cover bg-center flex flex-col-reverse px-4 py-8 md:flex-row">
+        <Image
+          alt="Sobre Nós"
+          src="/sobre.jpg"
+          width={900}
+          height={680}
+        />
+        <div className='px-4 pb-8'>
+          <h1 className='text-2xl text-primary font-bold mb-4'>Sobre Nós</h1>
+          <p>la justo, id ultricies nunc laoreet eget. In vitae dapibus mauris, non feugiat nisi. Cras ut feugiat urna, ut posuere augue. Proin eleifend nec mi pharetra pretium. Nullam gravida, massa in lacinia feugiat, velit odio pellentesque erat, eu blandit purus felis vitae erat. Proin id vestibulum nisl. Nullam maximus lorem mi.</p>
+          <p>Mauris bibendum pharetra odio, nec varius justo commodo non. Aliquam in gravida justo. Morbi et leo ut libero commodo porttitor. Nam dapibus est non ipsum tincidunt, nec suscipit mauris aliquam. Vivamus eget turpis orci. Nulla cursus ultrices iaculis. Duis sed maximus quam, ut egestas augue.</p>
+        </div>
+      </div>
+      <div className='bg-primary text-white flex flex-col px-4 py-8 gap-x-2 space-y-4 sm:flex-row sm:space-x-4'>
+        <div className='space-y-2'>
+          <h1 className='text-2xl font-bold'>Contato</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipscing elit</p>
+          <p className='flex'>
+            <FaPhone className='mr-1'/>
+            +91-988888888</p>
+          <p className='flex'>
+            <FaEnvelope className='mr-1' />
+            webvela@abc.com</p>
+          <p className='flex'>
+            <FaLocationDot className='mr-1'/>
+            Indaiatuba, SP</p>
+        </div>
+        <ContactForm />
+      </div>
+    </>
+
+
   );
 }

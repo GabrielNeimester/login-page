@@ -1,8 +1,6 @@
 import type { Config } from "tailwindcss";
 import {nextui} from "@nextui-org/react";
 
-
-
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,6 +10,20 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        fadeInDown: 'fadeInDown 1s ease-in forwards',
+        fadeInUp: 'fadeInUp 1s ease-in forwards',
+      },
+      keyframes: {
+        fadeInDown: {
+          '0%': { transform: 'translateY(-50px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        fadeInUp: {
+          '0%': { transform: 'translateY(50px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
