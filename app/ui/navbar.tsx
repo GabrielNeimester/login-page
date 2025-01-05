@@ -68,9 +68,7 @@ export default function NavBar() {
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <Link
                             className="w-full"
-                            color={
-                                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-                            }
+                            color="primary"
                             href="#"
                             size="lg"
                         >
