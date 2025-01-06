@@ -29,7 +29,7 @@ export default function Home() {
           height={680}
         />
         <div className='px-4 pb-8'>
-          <h1 className='text-2xl text-primary font-bold mb-4'>Sobre Nós</h1>
+          <a className='text-2xl text-primary font-bold mb-4'>Sobre Nós</a>
           <p>la justo, id ultricies nunc laoreet eget. In vitae dapibus mauris, non feugiat nisi. Cras ut feugiat urna, ut posuere augue. Proin eleifend nec mi pharetra pretium. Nullam gravida, massa in lacinia feugiat, velit odio pellentesque erat, eu blandit purus felis vitae erat. Proin id vestibulum nisl. Nullam maximus lorem mi.</p>
           <p>Mauris bibendum pharetra odio, nec varius justo commodo non. Aliquam in gravida justo. Morbi et leo ut libero commodo porttitor. Nam dapibus est non ipsum tincidunt, nec suscipit mauris aliquam. Vivamus eget turpis orci. Nulla cursus ultrices iaculis. Duis sed maximus quam, ut egestas augue.</p>
         </div>

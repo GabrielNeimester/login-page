@@ -10,7 +10,7 @@ async function getUser(): Promise<User | undefined> {
       id: "1",
       name: "Admin",
       email: "admin@email.com",
-      password: "Admin"
+      password: "admin"
     }
     return user
   } catch (error) {
@@ -29,12 +29,13 @@ export const { auth, signIn, signOut } = NextAuth({
           .safeParse(credentials);
 
         if (parsedCredentials.success) {
+          const {email} = parsedCredentials.data
           const {password } = parsedCredentials.data;
 
           const user = await getUser();
           if (!user) return null;
 
-          if (password == user.password) return user
+          if (password == user.password && email == user.email) return user
 
           return null
 
