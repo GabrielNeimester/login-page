@@ -11,8 +11,6 @@ export default function LoginForm() {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [isPending, setIsPending] = useState(false);
-    const [emailInvalid, setEmailInvalid] = useState(false);
-    const [passwordInvalid, setPasswordInvalid] = useState(false);
     
 
     const handleSubmit = async (event: React.FormEvent) => {
@@ -20,8 +18,7 @@ export default function LoginForm() {
 
         setIsPending(true);
         setErrorMessage('');
-        setEmailInvalid(false); 
-        setPasswordInvalid(false);  
+ 
 
         const formData = new FormData();
         formData.append('email', email);
@@ -31,8 +28,6 @@ export default function LoginForm() {
             const error = await authenticate(formData);
             if (error) {
                 setErrorMessage(error);
-                setPasswordInvalid(true)
-                setEmailInvalid(true)
             }
         } catch (error) {
             setErrorMessage(`${error} erro`);
@@ -51,7 +46,6 @@ export default function LoginForm() {
                 radius="full"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                isInvalid={emailInvalid}
             />
             <Input
                 label="Password"
@@ -60,7 +54,6 @@ export default function LoginForm() {
                 radius="full"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                isInvalid={passwordInvalid}
             
             />
             <Button color="primary" variant="solid" aria-disabled={isPending} type="submit">
